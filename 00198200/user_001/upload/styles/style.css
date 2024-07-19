@@ -1,0 +1,413 @@
+input[type=text], select {
+  width: 50%;
+  padding: 3px 10px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #18c4ff;;
+  color: white;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+input[type=button] {
+  width: 30%;
+  background-color: #18c4ff;
+  color: white;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #18c4ff;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+
+a:link { 
+  text-decoration: none; 
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: none; 
+} 
+a:active { 
+  text-decoration: none; 
+}
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+
+
+.transform-animation {
+  transition: transform 233ms cubic-bezier(0, 0, 0.21, 1);
+}
+
+.dashboard-layout {
+  height: 100vh;
+  display: grid;
+  display-template-columns: 1fr;
+  display-template-rows: 1fr;
+  grid-template-areas: "main";
+}
+@media (min-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas: "sidebar main";
+  }
+}
+.dashboard-layout .header {
+  background: blue;
+}
+.dashboard-layout .sidebar {
+  display: none;
+  grid-area: sidebar;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  overflow-y: auto;
+ 
+}
+@media (min-width: 768px) {
+  .dashboard-layout .sidebar {
+    position: static;
+    display: block;
+  }
+}
+.dashboard-layout .sidebar.show {
+  display: block;
+}
+.dashboard-layout .sidebar .sidebar-heading {
+  color: #FFFF;
+  font-size: 1rem;
+  background-color: #18c4ff;
+  padding: 1rem;
+  padding-bottom: 0.25rem;
+  margin: 0;
+}
+.dashboard-layout .sidebar .nav .nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.dashboard-layout .sidebar .nav .nav-item .nav-link i {
+  display: flex;
+  height: 2rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
+}
+.dashboard-layout .sidebar .nav .nav-item .nav-link.active {
+  color: #FFFF;
+  font-weight: bold;
+}
+.dashboard-layout .main {
+  background: white;
+  grid-area: main;
+}
+.dashboard-layout .main.sidebar-opened {
+  transform: translateX(240px);
+  overflow: hidden;
+  position: fixed;
+  
+}
+@media (min-width: 768px) {
+  .dashboard-layout .main.sidebar-opened {
+    transform: none;
+    overflow: visible;
+    position: static;
+
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  color: #222222
+}
+
+/* Dropdown */
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dd-button {
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 30px 10px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+.dd-button:hover {
+  background-color: #eeeeee;
+}
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-menu li:hover {
+  background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.success-container {
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+.modalbox.success {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  padding: 25px 25px 15px;
+  text-align: center;
+}
+.modalbox.success.animate .icon {
+  -webkit-animation: fall-in 0.75s;
+  -moz-animation: fall-in 0.75s;
+  -o-animation: fall-in 0.75s;
+  animation: fall-in 0.75s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.modalbox.success h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+.modalbox.success p {
+  font-family: 'Open Sans', sans-serif;
+}
+.modalbox.success .icon {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -75px;
+  background: #4caf50;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.modalbox.success .icon span {
+  postion: absolute;
+  font-size: 4em;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+}
+.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+/* stupid browser compat. smh */
+}
+.center .change {
+  clearn: both;
+  display: block;
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+table th,
+table td {
+  padding: 5px;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
